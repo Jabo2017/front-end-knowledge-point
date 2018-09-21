@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件委托</title>
+</head>
+<body>
+	<ul id="box">
+		<li>点击1</li>
+		<li>点击2</li>
+		<li>点击3</li>
+		<li>点击4</li>
+		<li>点击5</li>
+		<li>点击6</li>
+		<li>点击7</li>
+		<li>点击8</li>
+		<li>点击9</li>
+		<li>点击10</li>
+	</ul>
+
+	你点击了: <div id="show"></div>
+
+	<script type="text/javascript">
+		
+		window.onload = function(){
+			//父元素注册事件
+			document.getElementById("box").addEventListener("click",function(e){
+				if(e.target && e.target.nodeName == "LI") {
+					document.getElementById("show").innerText = e.target.innerText;	
+				}
+			})
+		}
+
+	</script>
+</body>
+</html>
